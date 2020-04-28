@@ -9,9 +9,13 @@
                 </div>
             {{- end -}}
 
-            <h1 class="display-4">{{ .Site.Title }}</h1>
+            <h1 class="display-4">{{ .Site.Params.name }}</h1>
             {{- with .Site.Params.description -}}
                 <h3 class="font-weight-normal">{{ . | safeHTML }}</h3>
+            {{- end -}}
+            <!-- Add an about section for describing the site-->
+            {{- with .Site.Params.about -}}
+                <p style="font-style: italic;">{{ . | safeHTML }}</p>
             {{- end -}}
         </div>
     </div>
